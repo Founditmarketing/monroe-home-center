@@ -1,0 +1,8 @@
+{
+  "name": "Monroe Home Center Redesign",
+  "description": "A high-octane, industrial luxury redesign of a real estate platform with cinematic visuals, glass-morphism UI, and real-time inventory management.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
