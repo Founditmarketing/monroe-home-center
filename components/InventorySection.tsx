@@ -54,23 +54,23 @@ const mockInventory: HomeInventory[] = [
 const InventorySection: React.FC = () => {
   return (
     <div className="max-w-[1440px] mx-auto px-10">
-      <div className="flex flex-col xl:flex-row xl:items-end justify-between mb-32 gap-16">
+      <div className="flex flex-col xl:flex-row xl:items-end justify-between mb-16 md:mb-32 gap-16">
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-5 py-1.5 bg-red-600/10 border border-red-600/40 text-red-500 text-[10px] font-black tracking-[0.5em] uppercase mb-8">
             <Zap size={14} className="fill-red-600" /> LIVE INVENTORY FEED
           </div>
-          <h2 className="font-oswald text-6xl md:text-9xl font-black uppercase tracking-tighter text-white mb-8">
+          <h2 className="font-oswald text-5xl md:text-9xl font-black uppercase tracking-tighter text-white mb-8">
             CURATED <span className="text-red-600 italic">POWER</span>
           </h2>
           <p className="text-white/40 text-2xl leading-relaxed font-light max-w-2xl">
-            Every structure in our collection is stress-tested against the Louisiana elements. 
+            Every structure in our collection is stress-tested against the Louisiana elements.
             Built for velocity, finished for prestige.
           </p>
         </div>
-        
+
         <div className="flex flex-wrap items-center gap-6">
           <button className="group flex items-center gap-4 px-10 py-5 bg-white/5 border border-white/10 hover:border-red-600/50 hover:bg-white/10 transition-all uppercase font-black text-xs tracking-[0.3em] text-white">
-            <Filter size={20} className="text-red-600 group-hover:rotate-180 transition-transform duration-700" /> 
+            <Filter size={20} className="text-red-600 group-hover:rotate-180 transition-transform duration-700" />
             Refine Specs
           </button>
           <button className="group flex items-center gap-4 px-10 py-5 bg-red-600 text-white uppercase font-black text-xs tracking-[0.3em] hover:bg-red-700 transition-all shadow-[0_15px_30px_rgba(220,38,38,0.3)]">
@@ -84,16 +84,16 @@ const InventorySection: React.FC = () => {
         {mockInventory.map((home) => (
           <div key={home.id} className="group flex flex-col inventory-card">
             <div className="relative overflow-hidden aspect-[16/10] bg-zinc-900 border border-white/5 shadow-2xl transition-all duration-700 hover:border-red-600/50">
-              <img 
-                src={home.image} 
+              <img
+                src={home.image}
                 alt={home.name}
                 className="card-img w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-transform duration-[2s] ease-out"
               />
-              
+
               {/* Overlay Gradients */}
               <div className="card-overlay absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-85 transition-opacity duration-700" />
               <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity mix-blend-overlay duration-700" />
-              
+
               {home.inStock && (
                 <div className="absolute top-10 left-10 flex items-center gap-4 px-6 py-2.5 bg-green-500 shadow-[0_0_30px_rgba(34,197,94,0.4)]">
                   <div className="w-2.5 h-2.5 bg-white rounded-full animate-ping" />
@@ -106,7 +106,7 @@ const InventorySection: React.FC = () => {
                   <div className="inline-block px-5 py-1.5 bg-red-600 text-[10px] text-white font-black uppercase tracking-[0.2em] mb-6">
                     {home.tag}
                   </div>
-                  <h3 className="font-oswald text-5xl md:text-6xl font-black text-white uppercase leading-none tracking-tighter mb-2">
+                  <h3 className="font-oswald text-3xl md:text-6xl font-black text-white uppercase leading-none tracking-tighter mb-2">
                     {home.name}
                   </h3>
                   <div className="flex items-center gap-2 text-white/50 text-xs font-bold tracking-widest uppercase">
@@ -132,7 +132,7 @@ const InventorySection: React.FC = () => {
             <div className="mt-12 grid grid-cols-3 gap-10 py-10 border-y border-white/10 relative overflow-hidden">
               <div className="absolute inset-y-0 left-1/3 w-px bg-white/5" />
               <div className="absolute inset-y-0 left-2/3 w-px bg-white/5" />
-              
+
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3 text-white/30">
                   <BedDouble size={18} />
@@ -155,7 +155,7 @@ const InventorySection: React.FC = () => {
                 <span className="text-2xl font-black text-white tracking-tighter italic">{home.sqft.toLocaleString()} SQFT</span>
               </div>
             </div>
-            
+
             <div className="mt-10 flex justify-between items-center group/footer">
               <button className="text-[11px] font-black text-white/40 hover:text-red-600 uppercase tracking-[0.5em] transition-all flex items-center gap-3">
                 TECH SPECS & GALLERY <ChevronRight size={16} />

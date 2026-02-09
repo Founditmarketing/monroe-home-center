@@ -6,13 +6,13 @@ const Hero: React.FC = () => {
   return (
     <div className="relative h-screen min-h-[950px] flex items-center justify-center overflow-hidden bg-black">
       {/* High-Octane Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[25s] scale-110 ease-out brightness-[0.4] contrast-[1.2]"
-        style={{ 
+        style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2400")',
         }}
       />
-      
+
       {/* Cinematic Lighting Masks */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/40" />
       <div className="absolute inset-0 bg-gradient-to-r from-indigo-950/20 via-transparent to-red-950/20 mix-blend-color-dodge" />
@@ -34,23 +34,23 @@ const Hero: React.FC = () => {
           <span className="text-[10px] uppercase font-black tracking-[0.4em]">Louisiana's #1 Destination For Luxury Living</span>
         </div>
 
-        <h1 className="font-oswald text-7xl md:text-9xl lg:text-[14rem] font-black leading-[0.75] tracking-tighter mb-12 select-none">
+        <h1 className="font-oswald text-5xl md:text-9xl lg:text-[14rem] font-black leading-[0.75] tracking-tighter mb-6 md:mb-12 select-none">
           <span className="block text-white opacity-95">LOUISIANA</span>
           <span className="block text-shatter" data-text="LUXURY">LUXURY</span>
         </h1>
 
-        <p className="max-w-3xl mx-auto text-xl md:text-2xl text-white/50 mb-16 font-light leading-relaxed tracking-wide">
-          Standard homes exist. <span className="text-white font-bold">Monroe Luxury</span> is built. 
+        <p className="max-w-3xl mx-auto text-lg md:text-2xl text-white/50 mb-10 md:mb-16 font-light leading-relaxed tracking-wide">
+          Standard homes exist. <span className="text-white font-bold">Monroe Luxury</span> is built.
           Experience the intersection of high-octane engineering and uncompromising Southern comfort.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-          <button className="group relative px-12 py-7 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.3em] text-xl transition-all animate-neon-pulse flex items-center gap-4 overflow-hidden">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
+          <button className="w-full sm:w-auto group relative px-8 sm:px-12 py-5 sm:py-7 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.3em] text-lg sm:text-xl transition-all animate-neon-pulse flex items-center justify-center gap-4 overflow-hidden">
             <span className="relative z-10">UNLEASH YOUR LIFESTYLE</span>
             <ChevronRight className="relative z-10 group-hover:translate-x-2 transition-transform" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </button>
-          <button className="px-12 py-7 bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-[0.3em] text-xl transition-all flex items-center gap-3 group">
+          <button className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-7 bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-[0.3em] text-lg sm:text-xl transition-all flex items-center justify-center gap-3 group">
             <Zap size={20} className="text-red-600 group-hover:scale-125 transition-transform" />
             VIEW INVENTORY
           </button>

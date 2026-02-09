@@ -38,7 +38,7 @@ const TestimonialWall: React.FC = () => {
           <div className="inline-flex items-center gap-2 text-red-600 font-black text-[10px] uppercase tracking-[0.5em] mb-6">
             <Users size={14} /> The Monroe Community
           </div>
-          <h2 className="font-oswald text-6xl md:text-9xl font-black uppercase tracking-tighter text-white mb-8">
+          <h2 className="font-oswald text-5xl md:text-9xl font-black uppercase tracking-tighter text-white mb-8">
             THE <span className="text-red-600">VERDICT</span>
           </h2>
           <p className="text-white/40 text-2xl leading-relaxed font-light">
@@ -59,7 +59,7 @@ const TestimonialWall: React.FC = () => {
         {testimonials.map((t, i) => (
           <div key={i} className="glass-morphism group relative p-12 hover:bg-white/[0.03] transition-all duration-700 overflow-hidden border-t-4 border-t-transparent hover:border-t-red-600 translate-y-0 hover:-translate-y-4">
             <Quote className="absolute -top-6 -right-6 text-white/[0.015] group-hover:text-red-600/10 transition-colors" size={160} />
-            
+
             <div className="relative z-10">
               <div className="flex items-center gap-6 mb-12">
                 <div className="relative">
@@ -117,9 +117,9 @@ const TestimonialWall: React.FC = () => {
       </div>
 
       <div className="mt-40 p-1 bg-gradient-to-r from-transparent via-red-600 to-transparent">
-        <div className="bg-[#050505] p-24 text-center relative overflow-hidden group">
+        <div className="bg-[#050505] p-10 md:p-24 text-center relative overflow-hidden group">
           <div className="absolute inset-0 bg-red-600/10 blur-[150px] translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-          <h3 className="text-5xl md:text-7xl font-oswald font-black text-white mb-10 uppercase tracking-tighter italic relative z-10">
+          <h3 className="text-4xl md:text-7xl font-oswald font-black text-white mb-10 uppercase tracking-tighter italic relative z-10">
             JOIN THE <span className="text-red-600 underline decoration-4 underline-offset-8">MONROE ELITE</span>
           </h3>
           <p className="max-w-2xl mx-auto text-white/50 text-xl mb-16 relative z-10 leading-relaxed font-light">
