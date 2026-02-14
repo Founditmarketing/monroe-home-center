@@ -81,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
 
         <div className="flex flex-col items-center justify-center h-full gap-8 p-6 relative z-10">
-          <div className="flex flex-col items-center gap-12 w-full max-w-xs">
+          <div className="flex flex-col items-center gap-6 w-full max-w-xs md:gap-8">
             {[
               { label: 'Inventory', href: '#inventory' },
               { label: 'Finance', href: '#calculator' },
@@ -92,23 +92,23 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-4xl font-oswald font-black text-white hover:text-red-600 transition-all uppercase tracking-widest italic flex items-center gap-4 group ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                className={`text-3xl font-oswald font-black text-white hover:text-red-600 transition-all uppercase tracking-widest italic flex items-center gap-4 group ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <span className="text-red-600 text-lg not-italic">0{i + 1}</span>
+                <span className="text-red-600 text-sm not-italic">0{i + 1}</span>
                 {link.label}
               </a>
             ))}
 
-            <div className={`w-full h-px bg-white/10 my-4 transition-all duration-700 delay-500 ${isMobileMenuOpen ? 'scale-x-100' : 'scale-x-0'}`} />
+            <div className={`w-full h-px bg-white/10 my-2 transition-all duration-700 delay-500 ${isMobileMenuOpen ? 'scale-x-100' : 'scale-x-0'}`} />
 
-            <div className={`flex flex-col items-center gap-6 transition-all duration-700 delay-600 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <a href="tel:3185550199" className="flex items-center gap-3 text-xl font-bold text-white hover:text-red-600 transition-colors">
-                <Phone size={20} className="text-red-600" />
+            <div className={`flex flex-col items-center gap-4 transition-all duration-700 delay-600 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <a href="tel:3185550199" className="flex items-center gap-3 text-lg font-bold text-white hover:text-red-600 transition-colors">
+                <Phone size={18} className="text-red-600" />
                 (318) 555-0199
               </a>
 
-              <button className="group relative w-full px-10 py-5 bg-red-600 text-white font-black text-sm uppercase tracking-[0.2em] overflow-hidden">
+              <button className="group relative w-full px-8 py-4 bg-red-600 text-white font-black text-xs uppercase tracking-[0.2em] overflow-hidden">
                 <span className="relative z-10">Connect with Expert</span>
                 <div className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
                 <span className="absolute inset-0 flex items-center justify-center text-black font-black translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-20">
