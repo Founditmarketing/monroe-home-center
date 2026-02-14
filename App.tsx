@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import QuickShipTicker from './components/QuickShipTicker';
+import WelcomeSection from './components/WelcomeSection';
 import InventorySection from './components/InventorySection';
 import TestimonialWall from './components/TestimonialWall';
 import PaymentCalculator from './components/PaymentCalculator';
+import VirtualTour from './components/VirtualTour';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -22,17 +24,21 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen selection:bg-red-600 selection:text-white">
       <Navbar scrolled={scrolled} />
-      
+
       <main>
         <Hero />
-        
+
         <div className="relative z-10 -mt-10">
           <QuickShipTicker />
         </div>
 
+        <WelcomeSection />
+
         <section id="inventory" className="py-24 bg-[#0a0a0a]">
           <InventorySection />
         </section>
+
+        <VirtualTour />
 
         <section id="calculator" className="py-24 bg-[#0f0f0f] border-y border-white/5">
           <PaymentCalculator />

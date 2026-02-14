@@ -55,8 +55,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <div className="flex items-center gap-4 md:gap-10">
             <div className="hidden md:flex flex-col items-end">
               <div className="text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">Direct Sales</div>
-              <a href="tel:3185550199" className="text-white font-oswald text-lg font-bold hover:text-red-600 transition-colors leading-none tracking-wider">
-                (318) 555-0199
+              <a href="tel:3182488875" className="text-white font-oswald text-lg font-bold hover:text-red-600 transition-colors leading-none tracking-wider">
+                (318) 248-8875
               </a>
             </div>
 

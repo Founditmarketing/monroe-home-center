@@ -1,10 +1,19 @@
-
-import React from 'react';
-import { ChevronRight, Key, FileText, Star, Trophy, Zap, MapPin } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ChevronRight, Key, FileText, Star, Trophy, Zap, MapPin, ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffset(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="relative h-screen min-h-[700px] md:min-h-[950px] flex items-center justify-center overflow-hidden bg-black">
+    <div className="relative h-screen w-full min-h-[700px] md:min-h-[950px] flex items-center justify-center overflow-hidden bg-black">
       {/* High-Octane Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[25s] scale-110 ease-out brightness-[0.4] contrast-[1.2]"
@@ -15,47 +24,61 @@ const Hero: React.FC = () => {
 
       {/* Cinematic Lighting Masks */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-indigo-950/20 via-transparent to-red-950/20 mix-blend-color-dodge" />
-
       {/* 3D Floating Elements - Depth Layer */}
       <div className="absolute top-[20%] left-[10%] opacity-40 animate-float-hero pointer-events-none hidden xl:block">
         <Key size={120} className="text-yellow-600/60 -rotate-45 blur-[1px]" />
       </div>
-      <div className="absolute bottom-[25%] right-[12%] opacity-30 animate-float-hero [animation-delay:3s] pointer-events-none hidden xl:block">
-        <FileText size={180} className="text-white/20 rotate-12 blur-[2px]" />
-      </div>
-      <div className="absolute top-[45%] right-[5%] opacity-10 animate-float-hero [animation-delay:5s] pointer-events-none hidden lg:block">
-        <div className="w-64 h-64 border-[1px] border-red-600/40 rotate-[35deg] mix-blend-screen" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-3 px-4 md:px-6 py-2 rounded-none bg-red-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.5)] mb-8 md:mb-12">
-          <Trophy size={14} className="fill-white md:w-4 md:h-4" />
-          <span className="text-[8px] md:text-[10px] uppercase font-black tracking-[0.4em]">Louisiana's #1 Destination For Luxury Living</span>
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        {/* Background with Parallax */}
+        <div
+          className="absolute inset-0 z-0 select-none"
+          style={{
+            backgroundImage: 'url("https://monroehomecenter.com/wp-content/uploads/sites/57/2025/07/k.jpg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: `translateY(${offset * 0.5}px)`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
         </div>
 
-        <h1 className="font-oswald text-5xl md:text-9xl lg:text-[14rem] font-black leading-[0.8] md:leading-[0.75] tracking-tighter mb-8 md:mb-12 select-none">
-          <span className="block text-white opacity-95">LOUISIANA</span>
-          <span className="block text-shatter" data-text="LUXURY">LUXURY</span>
-        </h1>
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 text-center">
+          <div
+            className="inline-block mb-4 opacity-0 animate-[fadeIn_1s_ease-out_forwards]"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <span className="px-4 py-1.5 border border-red-600/50 bg-red-600/10 backdrop-blur-md rounded-full text-red-500 font-oswald text-sm uppercase tracking-[0.2em]">
+              Louisiana's #1 Home Retailer
+            </span>
+          </div>
 
-        <p className="max-w-2xl mx-auto text-sm md:text-2xl text-white/50 mb-10 md:mb-16 font-light leading-relaxed tracking-wide px-4">
-          Standard homes exist. <span className="text-white font-bold">Monroe Luxury</span> is built.
-          <span className="hidden md:inline"> Experience the intersection of high-octane engineering and uncompromising Southern comfort.</span>
-        </p>
+          <h1 className="font-oswald text-6xl md:text-8xl lg:text-9xl font-black text-white uppercase tracking-tighter mb-8 opacity-0 animate-[slideUp_1s_ease-out_forwards]" style={{ animationDelay: '0.4s' }}>
+            Your New Home <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50 text-shatter">
+              Is Here
+            </span>
+          </h1>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-          <button className="w-full sm:w-auto group relative px-8 sm:px-12 py-5 sm:py-7 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.3em] text-base sm:text-xl transition-all animate-neon-pulse flex items-center justify-center gap-4 overflow-hidden">
-            <span className="relative z-10">UNLEASH LIFESTYLE</span>
-            <ChevronRight className="relative z-10 group-hover:translate-x-2 transition-transform" />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-          </button>
-          <button className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-7 bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-[0.3em] text-base sm:text-xl transition-all flex items-center justify-center gap-3 group">
-            <Zap size={18} className="text-red-600 group-hover:scale-125 transition-transform md:w-5 md:h-5" />
-            VIEW INVENTORY
-          </button>
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-12 opacity-0 animate-[slideUp_1s_ease-out_forwards]" style={{ animationDelay: '0.6s' }}>
+            Browse our expansive inventory of manufactured homes in Monroe, Louisiana. We're the newest retailer in the state, and we want to help you find the mobile home you're searching for.
+          </p>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 opacity-0 animate-[slideUp_1s_ease-out_forwards]" style={{ animationDelay: '0.8s' }}>
+            <button className="group relative px-8 py-4 bg-red-600 text-white font-black uppercase tracking-[0.2em] overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(220,38,38,0.3)] hover:shadow-[0_0_50px_rgba(220,38,38,0.5)]">
+              <span className="relative z-10 flex items-center gap-2">
+                Find Your Home <ArrowRight size={18} />
+              </span>
+              <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </button>
+
+            <button className="group px-8 py-4 border border-white/20 hover:border-white/50 bg-black/20 backdrop-blur-sm text-white font-black uppercase tracking-[0.2em] transition-all duration-300">
+              Contact Us
+            </button>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

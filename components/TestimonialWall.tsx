@@ -5,27 +5,27 @@ import { Quote, Star, CheckCircle, Play, Video, Users, Clock, MapPin, Zap } from
 
 const testimonials = [
   {
-    name: "Brittany Williams",
-    location: "Baton Rouge, LA",
-    quote: "Monroe Home Center made my dream a reality. I visited four other lots, but nothing compared to the 'Jackson Elite' they had in stock. The industrial kitchen and the wrap-around porch are absolute game changers. I'm living the lifestyle I always wanted.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
-    hasVideo: true,
-    rating: 5
-  },
-  {
-    name: "Marcus Thornton",
+    name: "Latonya M.",
     location: "Monroe, LA",
-    quote: "As a contractor, I know quality. These homes aren't just 'built'—they're engineered. The structural integrity and the high-end finishes are standard here, not upgrades. If you want the best in Louisiana, this is the only call to make.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+    quote: "Let me start by saying this 'Toya was absolutely amazing'. This has been an easy home buying process. We are thankful that God led us to this lot and we appreciate everything they did to make my brother and mother's dream come true.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
     hasVideo: false,
     rating: 5
   },
   {
-    name: "The Rodriguez Family",
-    location: "Shreveport, LA",
-    quote: "From financing to the final walk-through, the team at Monroe was incredible. We were moved into our custom multi-section home in just 22 days. The energy efficiency is saving us hundreds every month already!",
-    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=200",
-    hasVideo: true,
+    name: "Cindy R.",
+    location: "West Monroe, LA",
+    quote: "Thank you Madison Epps for working with us every step of the way to get us in our new home! We are so thankful for the hard work and being there with us every step of the way! The people at Monroe Home Center are HARD WORKING and AMAZING!!",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200",
+    hasVideo: false,
+    rating: 5
+  },
+  {
+    name: "Brittany W.",
+    location: "Rayville, LA",
+    quote: "Latoya's customer service was absolutely AMAZING! She stayed in contact, she was always one call away, and never was too busy for us even with the simplest question. She kept motivating and pushing us even when it got rough.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
+    hasVideo: false,
     rating: 5
   }
 ];
