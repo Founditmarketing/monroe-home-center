@@ -13,9 +13,9 @@ const PaymentCalculator: React.FC = () => {
     const principal = price - downPayment;
     const monthlyRate = interestRate / 100 / 12;
     const numberOfPayments = term * 12;
-    
+
     if (monthlyRate === 0) return principal / numberOfPayments;
-    
+
     return (
       (principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
       (Math.pow(1 + monthlyRate, numberOfPayments) - 1)
@@ -34,10 +34,10 @@ const PaymentCalculator: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-600/10 border border-red-600/20 text-red-500 text-[10px] font-black tracking-widest uppercase mb-6 rounded">
             Financial Transparency
           </div>
-          <h2 className="font-oswald text-5xl md:text-6xl font-black uppercase text-white tracking-tighter mb-8">
+          <h2 className="font-oswald text-4xl md:text-6xl font-black uppercase text-white tracking-tighter mb-6 md:mb-8 leading-none">
             INSTANT <span className="text-red-600 italic">BUDGET</span> CALCULATOR
           </h2>
-          <p className="text-white/50 text-lg mb-12">
+          <p className="text-white/50 text-base md:text-lg mb-10 md:mb-12 leading-relaxed">
             No hidden fees. No guesswork. Calculate your estimated monthly lifestyle investment with our industrial-grade calculator.
           </p>
 
@@ -47,7 +47,7 @@ const PaymentCalculator: React.FC = () => {
                 <span>Home Price</span>
                 <span className="text-white">${price.toLocaleString()}</span>
               </div>
-              <input 
+              <input
                 type="range" min="100000" max="500000" step="1000" value={price}
                 onChange={(e) => setPrice(Number(e.target.value))}
                 className="w-full accent-red-600 h-1 bg-white/10 rounded-lg appearance-none cursor-pointer"
@@ -59,7 +59,7 @@ const PaymentCalculator: React.FC = () => {
                 <span>Down Payment</span>
                 <span className="text-white">${downPayment.toLocaleString()}</span>
               </div>
-              <input 
+              <input
                 type="range" min="0" max={price * 0.5} step="1000" value={downPayment}
                 onChange={(e) => setDownPayment(Number(e.target.value))}
                 className="w-full accent-red-600 h-1 bg-white/10 rounded-lg appearance-none cursor-pointer"
@@ -71,7 +71,7 @@ const PaymentCalculator: React.FC = () => {
                 <label className="text-[10px] font-black uppercase tracking-widest text-white/40">Interest Rate (%)</label>
                 <div className="relative">
                   <Percent size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/20" />
-                  <input 
+                  <input
                     type="number" value={interestRate} step="0.1"
                     onChange={(e) => setInterestRate(Number(e.target.value))}
                     className="w-full bg-white/5 border border-white/10 rounded p-3 pl-10 text-white font-bold"
@@ -82,7 +82,7 @@ const PaymentCalculator: React.FC = () => {
                 <label className="text-[10px] font-black uppercase tracking-widest text-white/40">Loan Term (Years)</label>
                 <div className="relative">
                   <Calendar size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/20" />
-                  <select 
+                  <select
                     value={term}
                     onChange={(e) => setTerm(Number(e.target.value))}
                     className="w-full bg-white/5 border border-white/10 rounded p-3 pl-10 text-white font-bold appearance-none"
@@ -126,7 +126,7 @@ const PaymentCalculator: React.FC = () => {
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
                   </Pie>
-                  <Tooltip 
+                  <Tooltip
                     contentStyle={{ backgroundColor: '#18181b', border: '1px solid #3f3f46' }}
                     itemStyle={{ color: '#fff' }}
                   />
@@ -154,7 +154,7 @@ const PaymentCalculator: React.FC = () => {
             <button className="w-full mt-10 py-5 bg-white text-black font-black uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all rounded">
               GET PRE-APPROVED NOW
             </button>
-            
+
             <div className="mt-6 flex items-center justify-center gap-2 text-white/40">
               <ShieldCheck size={14} />
               <span className="text-[10px] font-bold uppercase tracking-widest">Safe & Secure Financing Partner</span>

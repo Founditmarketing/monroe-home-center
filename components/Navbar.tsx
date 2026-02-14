@@ -76,21 +76,47 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-black/95 z-40 transition-all duration-500 xl:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
-          <a href="#inventory" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-oswald font-black text-white hover:text-red-600 transition-colors uppercase tracking-widest">Inventory</a>
-          <a href="#calculator" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-oswald font-black text-white hover:text-red-600 transition-colors uppercase tracking-widest">Finance</a>
-          <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-oswald font-black text-white hover:text-red-600 transition-colors uppercase tracking-widest">Testimonials</a>
-          <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-oswald font-black text-white hover:text-red-600 transition-colors uppercase tracking-widest">About</a>
+      <div className={`fixed inset-0 bg-[#050505] z-40 transition-all duration-700 xl:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-full'}`}>
+        <div className="absolute inset-0 bg-gradient-to-b from-red-600/10 via-transparent to-transparent opacity-50" />
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
 
-          <div className="w-20 h-0.5 bg-white/10 my-4" />
+        <div className="flex flex-col items-center justify-center h-full gap-8 p-6 relative z-10">
+          <div className="flex flex-col items-center gap-12 w-full max-w-xs">
+            {[
+              { label: 'Inventory', href: '#inventory' },
+              { label: 'Finance', href: '#calculator' },
+              { label: 'Testimonials', href: '#testimonials' },
+              { label: 'About', href: '#' }
+            ].map((link, i) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-4xl font-oswald font-black text-white hover:text-red-600 transition-all uppercase tracking-widest italic flex items-center gap-4 group ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <span className="text-red-600 text-lg not-italic">0{i + 1}</span>
+                {link.label}
+              </a>
+            ))}
 
-          <a href="tel:3185550199" className="text-xl font-bold text-white hover:text-red-600 transition-colors">(318) 555-0199</a>
+            <div className={`w-full h-px bg-white/10 my-4 transition-all duration-700 delay-500 ${isMobileMenuOpen ? 'scale-x-100' : 'scale-x-0'}`} />
 
-          <button className="group relative px-10 py-5 bg-red-600 hover:bg-white transition-all rounded-none overflow-hidden mt-4">
-            <span className="relative z-10 text-white group-hover:text-black font-black text-sm uppercase tracking-[0.2em]">Connect with Expert</span>
-            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-          </button>
+            <div className={`flex flex-col items-center gap-6 transition-all duration-700 delay-600 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <a href="tel:3185550199" className="flex items-center gap-3 text-xl font-bold text-white hover:text-red-600 transition-colors">
+                <Phone size={20} className="text-red-600" />
+                (318) 555-0199
+              </a>
+
+              <button className="group relative w-full px-10 py-5 bg-red-600 text-white font-black text-sm uppercase tracking-[0.2em] overflow-hidden">
+                <span className="relative z-10">Connect with Expert</span>
+                <div className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+                <span className="absolute inset-0 flex items-center justify-center text-black font-black translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-20">
+                  LET'S TALK
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

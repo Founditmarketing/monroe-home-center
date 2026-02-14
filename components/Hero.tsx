@@ -4,7 +4,7 @@ import { ChevronRight, Key, FileText, Star, Trophy, Zap, MapPin } from 'lucide-r
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative h-screen min-h-[950px] flex items-center justify-center overflow-hidden bg-black">
+    <div className="relative h-screen min-h-[700px] md:min-h-[950px] flex items-center justify-center overflow-hidden bg-black">
       {/* High-Octane Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[25s] scale-110 ease-out brightness-[0.4] contrast-[1.2]"
@@ -29,34 +29,32 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-none bg-red-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.5)] mb-12">
-          <Trophy size={16} className="fill-white" />
-          <span className="text-[10px] uppercase font-black tracking-[0.4em]">Louisiana's #1 Destination For Luxury Living</span>
+        <div className="inline-flex items-center gap-3 px-4 md:px-6 py-2 rounded-none bg-red-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.5)] mb-8 md:mb-12">
+          <Trophy size={14} className="fill-white md:w-4 md:h-4" />
+          <span className="text-[8px] md:text-[10px] uppercase font-black tracking-[0.4em]">Louisiana's #1 Destination For Luxury Living</span>
         </div>
 
-        <h1 className="font-oswald text-5xl md:text-9xl lg:text-[14rem] font-black leading-[0.75] tracking-tighter mb-6 md:mb-12 select-none">
+        <h1 className="font-oswald text-5xl md:text-9xl lg:text-[14rem] font-black leading-[0.8] md:leading-[0.75] tracking-tighter mb-8 md:mb-12 select-none">
           <span className="block text-white opacity-95">LOUISIANA</span>
           <span className="block text-shatter" data-text="LUXURY">LUXURY</span>
         </h1>
 
-        <p className="max-w-3xl mx-auto text-lg md:text-2xl text-white/50 mb-10 md:mb-16 font-light leading-relaxed tracking-wide">
+        <p className="max-w-2xl mx-auto text-sm md:text-2xl text-white/50 mb-10 md:mb-16 font-light leading-relaxed tracking-wide px-4">
           Standard homes exist. <span className="text-white font-bold">Monroe Luxury</span> is built.
-          Experience the intersection of high-octane engineering and uncompromising Southern comfort.
+          <span className="hidden md:inline"> Experience the intersection of high-octane engineering and uncompromising Southern comfort.</span>
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
-          <button className="w-full sm:w-auto group relative px-8 sm:px-12 py-5 sm:py-7 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.3em] text-lg sm:text-xl transition-all animate-neon-pulse flex items-center justify-center gap-4 overflow-hidden">
-            <span className="relative z-10">UNLEASH YOUR LIFESTYLE</span>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+          <button className="w-full sm:w-auto group relative px-8 sm:px-12 py-5 sm:py-7 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.3em] text-base sm:text-xl transition-all animate-neon-pulse flex items-center justify-center gap-4 overflow-hidden">
+            <span className="relative z-10">UNLEASH LIFESTYLE</span>
             <ChevronRight className="relative z-10 group-hover:translate-x-2 transition-transform" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </button>
-          <button className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-7 bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-[0.3em] text-lg sm:text-xl transition-all flex items-center justify-center gap-3 group">
-            <Zap size={20} className="text-red-600 group-hover:scale-125 transition-transform" />
+          <button className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-7 bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/20 text-white font-black uppercase tracking-[0.3em] text-base sm:text-xl transition-all flex items-center justify-center gap-3 group">
+            <Zap size={18} className="text-red-600 group-hover:scale-125 transition-transform md:w-5 md:h-5" />
             VIEW INVENTORY
           </button>
         </div>
-
-
       </div>
     </div>
   );

@@ -12,17 +12,17 @@ const QuickShipTicker: React.FC = () => {
   ];
 
   return (
-    <div className="bg-red-600 overflow-hidden py-6 border-y-[6px] border-black/30 relative shadow-[0_0_50px_rgba(220,38,38,0.3)]">
+    <div className="bg-red-600 overflow-hidden py-4 md:py-6 border-y-[4px] md:border-y-[6px] border-black/30 relative shadow-[0_0_50px_rgba(220,38,38,0.3)]">
       <div className="flex animate-marquee-fast whitespace-nowrap">
         {[...Array(8)].map((_, i) => (
-          <div key={i} className="flex items-center gap-16 mx-16">
+          <div key={i} className="flex items-center gap-8 md:gap-16 mx-8 md:mx-16">
             {items.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-5 text-white">
-                <span className="opacity-80">{item.icon}</span>
-                <span className="font-oswald font-black text-2xl uppercase italic tracking-widest leading-none">
+              <div key={idx} className="flex items-center gap-3 md:gap-5 text-white">
+                <span className="opacity-80 scale-75 md:scale-100">{item.icon}</span>
+                <span className="font-oswald font-black text-lg md:text-2xl uppercase italic tracking-widest leading-none">
                   {item.text}
                 </span>
-                <span className="w-3 h-3 bg-white/40 rotate-45 ml-10" />
+                <span className="w-2 md:w-3 h-2 md:h-3 bg-white/40 rotate-45 ml-6 md:ml-10" />
               </div>
             ))}
           </div>

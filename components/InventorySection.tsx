@@ -80,7 +80,7 @@ const InventorySection: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
         {mockInventory.map((home) => (
           <div key={home.id} className="group flex flex-col inventory-card">
             <div className="relative overflow-hidden aspect-[16/10] bg-zinc-900 border border-white/5 shadow-2xl transition-all duration-700 hover:border-red-600/50">
@@ -95,27 +95,27 @@ const InventorySection: React.FC = () => {
               <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity mix-blend-overlay duration-700" />
 
               {home.inStock && (
-                <div className="absolute top-10 left-10 flex items-center gap-4 px-6 py-2.5 bg-green-500 shadow-[0_0_30px_rgba(34,197,94,0.4)]">
-                  <div className="w-2.5 h-2.5 bg-white rounded-full animate-ping" />
-                  <span className="text-[11px] font-black text-white uppercase tracking-[0.3em]">IN-STOCK NOW</span>
+                <div className="absolute top-6 left-6 md:top-10 md:left-10 flex items-center gap-4 px-4 md:px-6 py-2 md:py-2.5 bg-green-500 shadow-[0_0_30px_rgba(34,197,94,0.4)]">
+                  <div className="w-2 md:w-2.5 h-2 md:h-2.5 bg-white rounded-full animate-ping" />
+                  <span className="text-[9px] md:text-[11px] font-black text-white uppercase tracking-[0.3em]">IN-STOCK NOW</span>
                 </div>
               )}
 
-              <div className="absolute bottom-12 left-12 right-12 flex items-end justify-between translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out">
-                <div className="max-w-[70%]">
-                  <div className="inline-block px-5 py-1.5 bg-red-600 text-[10px] text-white font-black uppercase tracking-[0.2em] mb-6">
+              <div className="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 md:right-12 flex flex-col md:flex-row items-start md:items-end justify-between translate-y-4 md:translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out">
+                <div className="max-w-full md:max-w-[70%] mb-4 md:mb-0">
+                  <div className="inline-block px-4 md:px-5 py-1 md:py-1.5 bg-red-600 text-[9px] md:text-[10px] text-white font-black uppercase tracking-[0.2em] mb-4 md:mb-6">
                     {home.tag}
                   </div>
-                  <h3 className="font-oswald text-3xl md:text-6xl font-black text-white uppercase leading-none tracking-tighter mb-2">
+                  <h3 className="font-oswald text-2xl md:text-6xl font-black text-white uppercase leading-none tracking-tighter mb-2">
                     {home.name}
                   </h3>
-                  <div className="flex items-center gap-2 text-white/50 text-xs font-bold tracking-widest uppercase">
-                    <MapPin size={12} className="text-red-600" /> Louisiana Certified Structure
+                  <div className="flex items-center gap-2 text-white/50 text-[10px] md:text-xs font-bold tracking-widest uppercase">
+                    <MapPin size={10} className="text-red-600" /> Louisiana Certified Structure
                   </div>
                 </div>
-                <div className="flex flex-col items-end">
-                  <div className="text-white/40 text-[10px] uppercase font-black tracking-[0.4em] mb-2 italic">MSRP STARTING AT</div>
-                  <div className="text-white font-oswald text-5xl font-black italic group-hover:text-red-500 transition-colors">
+                <div className="flex flex-col items-start md:items-end">
+                  <div className="text-white/40 text-[9px] md:text-[10px] uppercase font-black tracking-[0.4em] mb-1 md:mb-2 italic">MSRP STARTING AT</div>
+                  <div className="text-white font-oswald text-3xl md:text-5xl font-black italic group-hover:text-red-500 transition-colors">
                     ${home.price.toLocaleString()}
                   </div>
                 </div>
@@ -123,22 +123,22 @@ const InventorySection: React.FC = () => {
 
               {/* Hover Explosion Action - The "Wow" Center */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none group-hover:pointer-events-auto">
-                <button className="w-24 h-24 bg-red-600 text-white flex items-center justify-center shadow-[0_0_60px_rgba(220,38,38,0.6)] scale-50 group-hover:scale-110 transition-transform duration-700 border-4 border-white/20">
-                  <ArrowUpRight size={40} />
+                <button className="w-20 h-20 md:w-24 md:h-24 bg-red-600 text-white flex items-center justify-center shadow-[0_0_60px_rgba(220,38,38,0.6)] scale-50 group-hover:scale-110 transition-transform duration-700 border-4 border-white/20">
+                  <ArrowUpRight size={32} />
                 </button>
               </div>
             </div>
 
-            <div className="mt-12 grid grid-cols-3 gap-10 py-10 border-y border-white/10 relative overflow-hidden">
-              <div className="absolute inset-y-0 left-1/3 w-px bg-white/5" />
-              <div className="absolute inset-y-0 left-2/3 w-px bg-white/5" />
+            <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 py-8 md:py-10 border-y border-white/10 relative overflow-hidden">
+              <div className="hidden md:block absolute inset-y-0 left-1/3 w-px bg-white/5" />
+              <div className="hidden md:block absolute inset-y-0 left-2/3 w-px bg-white/5" />
 
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2 md:gap-3">
                 <div className="flex items-center gap-3 text-white/30">
-                  <BedDouble size={18} />
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em]">Living Capacity</span>
+                  <BedDouble size={16} />
+                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em]">Living Capacity</span>
                 </div>
-                <span className="text-2xl font-black text-white tracking-tighter">{home.beds} BEDROOMS</span>
+                <span className="text-xl md:text-2xl font-black text-white tracking-tighter">{home.beds} BEDROOMS</span>
               </div>
               <div className="flex flex-col gap-3 text-center lg:text-left">
                 <div className="flex items-center gap-3 text-white/30 justify-center lg:justify-start">
