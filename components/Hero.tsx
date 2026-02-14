@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-100 ease-out brightness-[0.4] contrast-[1.2]"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2400")',
+          backgroundImage: 'url("https://monroehomecenter.com/wp-content/uploads/sites/57/2025/07/k.jpg")',
           transform: `scale(1.1) translate(${mousePosition.x * -1}px, ${mousePosition.y * -1}px)`,
         }}
       />
