@@ -10,42 +10,75 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #050505;
+  background: #050505;
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 4px;
+  background: #333;
+  border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #ef4444;
+  background: #ef4444;
 }
 
 /* Enhancements */
 .glass-morphism {
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bg-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.03;
+  /* Very subtle grain */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  /* Fade in/out if needed, or just let it sit */
+  mix-blend-mode: overlay;
+}
+
+@keyframes liquid-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .text-shatter {
-    background: linear-gradient(
-      to bottom,
+  background: linear-gradient(90deg,
       #ffffff 0%,
-      #f3f4f6 15%,
-      #d1d5db 30%,
-      #9ca3af 45%,
-      #4b5563 60%,
-      #1f2937 75%,
-      #111827 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.9));
-    letter-spacing: -0.07em;
-    position: relative;
-    display: inline-block;
+      #9ca3af 20%,
+      #4b5563 40%,
+      #ffffff 60%,
+      #9ca3af 80%,
+      #ffffff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));
+  letter-spacing: -0.07em;
+  position: relative;
+  display: inline-block;
+  animation: liquid-shimmer 8s linear infinite;
+}
+
+.magnetic-button {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
